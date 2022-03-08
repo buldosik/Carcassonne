@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class Tile
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+     // 1 - grass  - gr
+     // 2 - forest - fr
+     // 3 - river  - rv
+    public string top;
+    public string right;
+    public string bottom;
+    public string left;
 
-    // Update is called once per frame
-    void Update()
+    public void Rotate()
     {
-        
+        string temp = top;
+        top = left;
+        left = bottom;
+        bottom = right;
+        right = temp;
     }
+    
 }
