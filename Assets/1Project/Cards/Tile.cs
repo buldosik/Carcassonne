@@ -1,16 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
+[System.Serializable]
 public class Tile
 {
-     // 1 - grass  - gr
-     // 2 - forest - fr
-     // 3 - river  - rv
+     // 1 - grass  - g
+     // 2 - forest - f
+     // 3 - river  - r
+    [HideInInspector] public int id = 0;
+    public Sprite sprite;
     public string top;
     public string right;
     public string bottom;
     public string left;
+
+    public Tile(int n)
+    {
+        this.id = n;
+    }
 
     public void Rotate()
     {
@@ -20,5 +30,4 @@ public class Tile
         bottom = right;
         right = temp;
     }
-    
 }
