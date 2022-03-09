@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     void GetNewTile()
     {
         List <Tile> CurrentDeck = Deck.AllTiles;
-        CurrentTile = CurrentDeck[CurrentDeck.Count - 1];
-        CurrentDeck.RemoveAt(CurrentDeck.Count - 1);
+        CurrentTile = CurrentDeck[0];
+        CurrentDeck.RemoveAt(0);
         Deck.AllTiles = CurrentDeck;    
         TileImage.sprite = CurrentTile.sprite;
     }
@@ -31,7 +31,9 @@ public class Player : MonoBehaviour
     }
     public void PlaceTile(float x, float y)
     {
-        CurrentField.AddNewTile(CurrentTile, (int)x, (int)y);
+        if(!CurrentField.AddNewTile(CurrentTile, (int)x, (int)y))
+            return;
+        TileImage.transform.eulerAngles = new Vector3(0,0,0);
         GetNewTile();
     }
 }

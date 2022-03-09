@@ -5,6 +5,11 @@ using UnityEngine;
 public class TilePosition : MonoBehaviour
 {
     private Transform _transform => GetComponent<Transform>();
+    public Sprite sprite;
+    public string top;
+    public string right;
+    public string bottom;
+    public string left;
     
     void Update()
     {

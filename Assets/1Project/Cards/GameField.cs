@@ -28,8 +28,10 @@ public class GameField : MonoBehaviour
     public void CheckAwailablePositions()
     {
         awailablePositions.Clear();
-        while(parentAwailableTiles.transform.childCount > 0)
-            Destroy(parentAwailableTiles.transform.GetChild(0).gameObject);
+        foreach (Transform child in parentAwailableTiles.transform)
+            GameObject.Destroy(child.gameObject);
+        //while(parentAwailableTiles.transform.childCount > 0)
+        //    Destroy(parentAwailableTiles.transform.GetChild(0).gameObject);
         for(int i = 1; i < gridSize - 1; i++)
         {
             for(int j = 1; j < gridSize - 1; j++)
@@ -53,12 +55,46 @@ public class GameField : MonoBehaviour
     {
         GameObject newAwailableTile = Instantiate(tilePrefab);
         newAwailableTile.GetComponent<SpriteRenderer>().sprite = tile.sprite;
+        TilePosition temp = newAwailableTile.GetComponent<TilePosition>();
+        temp.top = tile.top;
+        temp.right = tile.right;
+        temp.bottom = tile.bottom;
+        temp.left = tile.left;
+        newAwailableTile.transform.eulerAngles = tile.eulerAngles;
         newAwailableTile.transform.position = new Vector3((float)(x), (float)(y), 0f);    
     }
-    public void AddNewTile(Tile tile, int x, int y)
+    public bool AddNewTile(Tile tile, int x, int y)
     {
+        if(!IsPossibleToPlace(tile, x, y))
+            return false;
         grid[x / 2 + 25][y / 2 + 25] = tile;
         DrawNewTile(tile, x, y);
         CheckAwailablePositions();
+        return true;
+    }
+    public bool IsPossibleToPlace(Tile tile, int x, int y)
+    {
+        x = x / 2 + 25;
+        y = y / 2 + 25;
+        for(int i = -1; i <= 1; i++)
+        {
+            for(int j = -1; j <= 1; j++)
+            {
+                if(i * i + j * j != 1)
+                    continue;
+                Tile cur = grid[x + i][y + j];
+                if(cur.id == -1)
+                    continue;
+                if(j == -1 && tile.bottom != cur.top)
+                    return false;
+                if(j == 1 && tile.top != cur.bottom)
+                    return false;
+                if(i == -1 && tile.left != cur.right)
+                    return false;
+                if(i == 1 && tile.right != cur.left)
+                    return false;
+            }
+        }
+        return true;
     }
 }

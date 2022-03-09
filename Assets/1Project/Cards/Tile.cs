@@ -17,6 +17,7 @@ public class Tile
     public string bottom;
     public string left;
 
+    [HideInInspector] public Vector3 eulerAngles = new Vector3(0,0,0);
     public Tile(int n)
     {
         this.id = n;
@@ -29,5 +30,6 @@ public class Tile
         left = bottom;
         bottom = right;
         right = temp;
+        eulerAngles += new Vector3(0,0,-90);
     }
 }
