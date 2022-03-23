@@ -360,6 +360,7 @@ MonoBehaviour:
     right: g
     bottom: f
     left: f
+    eulerAngles: {x: 0, y: 0, z: 0}
   tilePrefab: {fileID: 4175153294957637535, guid: a3af9ab714f169b4a8b512a8cf26c772, type: 3}
   awailableTilePrefab: {fileID: 2840623514548210663, guid: 61865956b4421cc45b173537ab1bd4af, type: 3}
   parentAwailableTiles: {fileID: 299676472}
@@ -987,35 +988,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllTiles:
   - id: 0
-    sprite: {fileID: -223045403, guid: 03bcd0362d0f47847b08aa4fea6cd840, type: 3}
-    top: r
-    right: r
-    bottom: f
+    sprite: {fileID: -1361886920, guid: 03bcd0362d0f47847b08aa4fea6cd840, type: 3}
+    top: f
+    right: f
+    bottom: r
     left: f
+    eulerAngles: {x: 0, y: 0, z: 0}
   - id: 0
     sprite: {fileID: 79773159, guid: 03bcd0362d0f47847b08aa4fea6cd840, type: 3}
     top: r
     right: r
     bottom: g
     left: r
+    eulerAngles: {x: 0, y: 0, z: 0}
   - id: 0
     sprite: {fileID: -989033498, guid: 03bcd0362d0f47847b08aa4fea6cd840, type: 3}
     top: r
     right: g
     bottom: r
     left: r
+    eulerAngles: {x: 0, y: 0, z: 0}
   - id: 0
     sprite: {fileID: -1771755793, guid: 03bcd0362d0f47847b08aa4fea6cd840, type: 3}
     top: g
     right: g
     bottom: g
     left: g
+    eulerAngles: {x: 0, y: 0, z: 0}
   - id: 0
     sprite: {fileID: -1005836969, guid: 03bcd0362d0f47847b08aa4fea6cd840, type: 3}
     top: g
     right: r
     bottom: r
     left: g
+    eulerAngles: {x: 0, y: 0, z: 0}
 --- !u!4 &1653162751
 Transform:
   m_ObjectHideFlags: 0
@@ -1067,6 +1073,7 @@ MonoBehaviour:
     right: 
     bottom: 
     left: 
+    eulerAngles: {x: 0, y: 0, z: 0}
   TileImage: {fileID: 790206466}
   CurrentField: {fileID: 553726235}
 --- !u!4 &2128360051
