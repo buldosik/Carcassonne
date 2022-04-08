@@ -13,8 +13,8 @@ TextureImporter:
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
-    mipMapFadeDistanceStart: 1
-    mipMapFadeDistanceEnd: 3
+    mipMapFadeDistanceStart: 2
+    mipMapFadeDistanceEnd: 4
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
@@ -38,7 +38,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -50,7 +50,7 @@ TextureImporter:
   spritePixelsToUnits: 140
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 0
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -80,12 +80,12 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 10
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -2061,8 +2061,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1 1_6: -378323618
       1 1_29: 2027905157
+      1 1_86: -1108514684
       1 1_16: -652902265
       1 1_5: -69143832
       1 1_52: 1593814564
@@ -2142,8 +2142,8 @@ TextureImporter:
       1 1_19: -435314144
       1 1_54: 1806354720
       1 1_65: 8869426
-      1 1_20: 12307968
       1 1_18: -162130067
+      1 1_20: 12307968
       1 1_8: -1166554879
       1 1_46: 947976325
       1 1_53: -1567171268
@@ -2151,7 +2151,7 @@ TextureImporter:
       1 1_36: -1890232656
       1 1_31: 1250556713
       1 1_34: -1921274693
-      1 1_86: -1108514684
+      1 1_6: -378323618
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
